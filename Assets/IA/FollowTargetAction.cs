@@ -17,4 +17,10 @@ public class FollowTargetAction : AIAction
             transform.LookAt(_brain.Target.position);
         }
     }
+
+    public override void OnEnterState()
+    {
+        base.OnEnterState();
+        GetComponentInChildren<Animator>().SetBool("IsFollowing", true);
+    }
 }
